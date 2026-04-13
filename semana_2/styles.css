@@ -1,0 +1,253 @@
+/* Import for the fonts used in the website */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300..700&display=swap');
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0%;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(225deg, #202020 60%, #474646);
+    height: 100%;
+    width: 100%;
+}
+
+/* This part is for changing the color of the links depending on wich action is executting */
+a:link {
+    color: #ffffff8e;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #7978788e;
+}
+
+a:hover {
+    color: #ffffff;
+    animation: grow 0.3s ease forwards;
+}
+
+a:active {
+    color: #ffffff;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202020;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #ffffff8e;
+    font-size: 30px;
+    padding: 20px;
+    margin: 0;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #202020;
+}
+
+header li {
+    float: left;
+}
+
+header li a:link {
+    display: block;
+    color: #ffffff8e;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    padding: 30px;
+    font-size: 20px;
+}
+
+header li a:hover {
+    background-color: #0A0908;
+}
+
+#about_me {
+    width: 50%;
+    font-size: 1.5vmax;
+    margin-right: 25%;
+    margin-left: 25%;
+    word-wrap: break-word;
+    position: relative;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #ffffff8e;
+    margin: 20px;
+}
+
+/* This is the glass background of the about me and the proyects section  */
+.glass {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: -10px;
+    background: rgba(255, 255, 255, 0.17);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#proyects {
+    font-family: "Fredoka";
+    position: relative;
+    margin: 1vmin;
+    padding: 1vmin;
+    width: 30%;
+    font-size: 1vmax;
+}
+
+#proyects ul {
+    list-style: none;
+    padding: 1vmin;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area:
+        "1 2 3"
+        "4 5 6";
+    grid-gap: 2vmax;
+}
+
+#proyects ul li a {
+    display: block;
+}
+
+#proyects_title {
+    font-family: "Chango";
+    color: #ffffff8e;
+}
+
+#contact form {
+    font-family: "Fredoka";
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-gap: 3px;
+    color: #ffffff8e;
+    font-size: .9vmax;
+    align-items: center;
+    margin: 20px;
+}
+
+#contact #name {
+    height: 3vmin;
+    width: 33vmin;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.17);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+#contact #password {
+    height: 3vmin;
+    width: 33vmin;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.17);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+#submit {
+    color: #ffffff8e;
+    height: 3vmin;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    opacity: 0.5;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.17);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    font-size: 1.5vmin;
+}
+
+#submit:hover {
+    animation: grow 0.3s ease forwards;
+}
+
+#gallery {
+    width: 30%;
+    height: 80vh;
+    margin: 5%;
+    margin-bottom: 0;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 40% 40%;
+    color: #ffffff8e;
+}
+
+#gallery article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gallery article img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.figure_imagenes {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 4px;
+    overflow: -moz-hidden-unscrollable;
+}
+
+#gallery .img_grande {
+    width: 100%;
+    height: 100%;
+}
+
+#gallery .img_pequeña {
+    width: 100%;
+    height: 100%;
+}
+
+#gallery article p {
+    background: rgba(255, 255, 255, 0.17);
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1vmax
+}
