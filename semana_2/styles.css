@@ -5,31 +5,30 @@
     0% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(1.1);
     }
 }
 
 html {
+    min-height: 100vh;
     margin: 0px;
-    height: 100%;
-    width: 100%;
-    font-family: "Space Grotesk", sans-serif;
+    background: linear-gradient(225deg, #202020 60%, #474646);
+    background-size: cover;
 }
 
 body {
+    font-family: "Space Grotesk", sans-serif;
     display: flex;
     flex-wrap: nowrap;
     margin: 0%;
     align-items: center;
     flex-direction: column;
-    height: 100%;
-    background: linear-gradient(225deg, #202020 60%, #474646);
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
 }
 
-/* This part is for changing the color of the links depending on wich action is executting */
+/* Esta parte cambia el color de los links y les agrega una pequeña animacion de crecimiento */
 a:link {
     color: #ffffff8e;
     text-decoration: none;
@@ -90,6 +89,7 @@ header li a:hover {
     background-color: #0A0908;
 }
 
+/* Seccion sobre mi */
 #about_me {
     width: 50%;
     font-size: 1.5vmax;
@@ -103,7 +103,7 @@ header li a:hover {
     margin: 20px;
 }
 
-/* This is the glass background of the about me and the proyects section  */
+/* Esta es una clase que agrega un efecto de glass o vidrio en el fondo */
 .glass {
     width: 100%;
     height: 100%;
@@ -119,13 +119,16 @@ header li a:hover {
     z-index: -1;
 }
 
+/* Seccion de proyectos */
 #proyects {
-    font-family: "Fredoka";
     position: relative;
     margin: 1vmin;
     padding: 1vmin;
-    width: 30%;
     font-size: 1vmax;
+}
+
+#proyects_title {
+    color: #ffffff8e;
 }
 
 #proyects ul {
@@ -139,17 +142,14 @@ header li a:hover {
     grid-gap: 2vmax;
 }
 
+/* Este display block lo deje porque por alguna razon al quitarlo no funcionan las animaciones de los links, supongo que es por una herencia de un padre 
+pero en inspeccionar no me lo dice claramente */
 #proyects ul li a {
     display: block;
 }
 
-#proyects_title {
-    font-family: "Chango";
-    color: #ffffff8e;
-}
-
+/* Seccion de contacto */
 #contact form {
-    font-family: "Fredoka";
     display: grid;
     grid-template-columns: 80px 1fr;
     grid-gap: 3px;
@@ -198,16 +198,18 @@ header li a:hover {
     animation: grow 0.3s ease forwards;
 }
 
+/* Estos son los estilos para la galleria de imagenes */
 #gallery {
     width: 30%;
     height: 80vh;
-    margin: 5%;
-    margin-bottom: 0;
+    margin: 1%;
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 1vh;
+    grid-row-gap: 5vh;
     grid-template-columns: 50% 50%;
     grid-template-rows: 40% 40%;
     color: #ffffff8e;
+    align-content: space-around
 }
 
 #gallery article {
@@ -217,31 +219,22 @@ header li a:hover {
     align-items: center;
 }
 
-#gallery article img {
-    width: 40px;
-    height: 40px;
-    border-radius: 20%;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
 .figure_imagenes {
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    grid-gap: 4px;
+    grid-gap: 10px;
     overflow: -moz-hidden-unscrollable;
+    margin: 0;
 }
 
-#gallery .img_grande {
+#gallery article img {
     width: 100%;
-    height: 100%;
-}
-
-#gallery .img_pequeña {
-    width: 100%;
-    height: 100%;
+    height: 15vh;
+    border-radius: 20%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #gallery article p {
@@ -249,5 +242,6 @@ header li a:hover {
     padding: 5px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 1vmax
+    font-size: 1vmax;
+    margin-top: 10%;
 }
