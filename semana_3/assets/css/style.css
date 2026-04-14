@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300..700&display=swap");
 :root {
-  --background-color1: #202020;
-  --background-color2: #474646;
+  --background-color1: rgb(0, 0, 0);
+  --background-color2: #141414;
+  --background-color3: #181818;
+  --background-color4: #141414;
+  --background-color5: rgb(0, 0, 0);
   --text-color: #ffffff8e;
   --glass-background-color: rgba(255, 255, 255, 0.17);
   --glass-border-values: 1px solid rgba(255, 255, 255, 0.3);
@@ -11,11 +14,14 @@
 }
 
 html {
-  min-height: 100vh;
   margin: 0px;
-  background: linear-gradient(225deg, var(--background-color1) 60%, var(--background-color2));
-  background-size: cover;
+  background: linear-gradient(135deg, var(--background-color1), var(--background-color2), var(--background-color3), var(--background-color4), var(--background-color5));
+  background-size: 600% 150%;
+  background-position: 0 0;
   font-family: var(--font-space-grotesk);
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-name: gradients;
 }
 @keyframes grow {
   0% {
@@ -25,12 +31,31 @@ html {
     transform: scale(1.1);
   }
 }
+@keyframes gradients {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 50% 0;
+  }
+  50% {
+    background-position: 90% 0;
+  }
+  60% {
+    background-position: 60%;
+  }
+  75% {
+    background-position: 40%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 html body {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
   margin: 0%;
   font-size: 1vmax;
 }
@@ -41,6 +66,14 @@ html body header {
   width: 100%;
   margin-bottom: 20px;
   background-color: var(--background-color1);
+}
+@media (max-width: 575.98px) {
+  html body header {
+    flex-direction: column;
+  }
+  html body header h1 {
+    font-size: 5vmax;
+  }
 }
 html body header h1 {
   color: var(--text-color);
@@ -62,11 +95,20 @@ html body header #menu_nav ul li a:link {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  padding: 30px;
-  font-size: 20px;
+  padding: 2vmax;
+  font-size: 1vmax;
 }
 html body header #menu_nav ul li a:hover {
-  background-color: black;
+  background-color: rgb(10, 10, 10);
+}
+@media (max-width: 575.98px) {
+  html body header #menu_nav ul li {
+    float: none;
+  }
+  html body header #menu_nav ul li a:link {
+    padding: 1vmax;
+    font-size: 3vmax;
+  }
 }
 html body #about_me {
   width: 80%;
@@ -190,14 +232,14 @@ html body #contact #submit:hover {
   color: white;
 }
 html body #gallery {
-  width: 30%;
+  width: 60%;
   height: 80vh;
   margin: 1%;
   display: grid;
   grid-gap: 1vh;
   grid-row-gap: 5vh;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 40% 40%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
   color: var(--text-color);
   align-content: space-around;
 }
@@ -208,11 +250,15 @@ html body #gallery article {
   align-items: center;
   height: fit-content;
 }
-html body #gallery article figure {
-  width: 100%;
+html body #gallery article .figure_imagenes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  margin: 0;
   height: 100%;
 }
-html body #gallery article figure img {
+html body #gallery article .figure_imagenes img {
   width: 100%;
   height: 100%;
   border-radius: 20%;
@@ -226,12 +272,11 @@ html body #gallery article p {
   font-size: 1vmax;
   margin-top: 10%;
 }
-html body #gallery .figure_imagenes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 10px;
-  margin: 0;
+@media (max-width: 575.98px) {
+  html body #gallery {
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+  }
 }
 html a:link {
   color: var(--text-color);
