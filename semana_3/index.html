@@ -10,49 +10,121 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body onload="welcomeTransition()">
     <header>
         <h1>DANIEL ARCINIEGAS</h1>
         <nav id="menu_nav">
             <ul>
-                <li><button>PROYECTS</button></li>
-                <li><a href="index.html">ABOUT ME</a></li>
-                <li><a href="index.html">CONTACT</a></li>
+                <li><button id="btn_about_me" onclick="showSection('aboutme')">ABOUT ME</button></li>
+                <li><button id="btn_proyects" onclick="showSection('proyects')">PROYECTS</button></li>
+                <li><button id="btn_contact" onclick="showSection('contact')">CONTACT</button></li>
             </ul>
         </nav>
     </header>
+    
+    <div id="welcome" class="glass">
+        <h2>Welcome</h2>
+        <p>Welcome to version 1.0 of my portfolio. This particular version was created using HTML, CSS, and JavaScript.
+        It looks simple, I know! But it will improve day by day; this is just the first version.</p>
+        <img src="assets/img/logos_todos.png" alt="?">
+        <button id="close_welcome_button"><img src="assets/img/close_button.png" alt=""></button>
+    </div>
 
-    <section id="about_me">
-        <h2>ABOUT ME</h2>
-        <p id="about_me_p">
-            Hi! I'm Daniel Arci, and this page was created as a personal portfolio of my projects developed during my studies at RIWI.<br>
-I'm a coder looking to become a developer at RIWI, and I'm currently learning Python, HTML, CSS, and JavaScript. <br> 
-I hope to continue working and studying to achieve my goal of working for a major international technology company. <br>
-        </p>
-        <button id="more_info">Click for more info</button>
-        <div class="glass"></div>
-    </section>
+    <div id="section_container">
+        <section id="about_me">
+            <h2>ABOUT ME</h2>
 
-    <section id="proyects">
-        <h2 id="proyects_title">PROYECTS</h2>
-        <ul>
-            <li id="mascotas"><a href="pets.html">PETS PROYECT</a></li>
-            <li id="snake"><a href="snake.html">SNAKE GAME PROYECT</a></li>
-            <li id="atm"><a href="atm.html">ATM PROYECT</a></li>
-        </ul>
-        <div class="glass"></div>
-    </section>
+            <p id="about_me_p" class="glass">
+                Hi! I'm Daniel Arci, and this page was created as a personal portfolio of my projects developed during my studies at RIWI.<br>
+                I'm a coder looking to become a developer at RIWI, and I'm currently learning Python, HTML, CSS, and JavaScript. <br> 
+                I hope to continue working and studying to achieve my goal of working for a major international technology company. <br>
+            </p>
+            <p id="about_me_p2" class="glass"></p>
 
-    <section id="contact">
-        <h2>CONTACT ME</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-            <input type="submit" id="submit" value="Submit">
-        </form>
-    </section>
+            <button id="more_info" class="glass">Click for more info</button>
+        </section>
+
+        <section id="proyects" class="glass">
+            <h2 id="proyects_title">PROYECTS</h2>
+            <div id="proyects_cards" class="glass">
+                <a href="pets.html" id="pets_html">
+                    <div class="card">
+                        <img src="https://www.petalatino.com/wp-content/uploads/peta_lion_ducklings_rescued-1152x1536-1.jpg" alt="Pets">
+                        <div class="description">
+                            <h3>PETS PROYECT</h3>
+                            <span></span>
+                            <p>This is my photo gallery of my pets!</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="snake.html">
+                    <div class="card">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDgyOThlNDYtNDNhMy00M2JkLWEwZDktZWFjZDQ3NmU5ZGUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Snake Game!">
+                        <div class="description">
+                            <h3>SNAKE PROYECT</h3>
+                            <span></span>
+                            <p>A nice game. WIP. aksjdhkasdasdjhakh</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="ATM.html">
+                    <div class="card">
+                        <img src="https://thumbs.dreamstime.com/b/ilustraci%C3%B3n-de-dise%C3%B1o-plano-un-cajero-autom%C3%A1tico-dibujos-animados-esta-encantadora-representa-atm-en-estilo-y-limpio-la-unidad-415233531.jpg" alt="ATM">
+                        <div class="description">
+                            <h3>ATM PROYECT</h3>
+                            <span></span>
+                            <p>WIP. aksjdhkadhkajdhkajdhkjashdkjahd</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="snake.html">
+                    <div class="card">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDgyOThlNDYtNDNhMy00M2JkLWEwZDktZWFjZDQ3NmU5ZGUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Snake Game!">
+                        <div class="description">
+                            <h3>SNAKE PROYECT</h3>
+                            <span></span>
+                            <p>A nice game. WIP. aksjdhkasdasdjhakh</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="snake.html">
+                    <div class="card">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDgyOThlNDYtNDNhMy00M2JkLWEwZDktZWFjZDQ3NmU5ZGUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Snake Game!">
+                        <div class="description">
+                            <h3>SNAKE PROYECT</h3>
+                            <span></span>
+                            <p>A nice game. WIP. aksjdhkasdasdjhakh</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="snake.html">
+                    <div class="card">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDgyOThlNDYtNDNhMy00M2JkLWEwZDktZWFjZDQ3NmU5ZGUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Snake Game!">
+                        <div class="description">
+                            <h3>SNAKE PROYECT</h3>
+                            <span></span>
+                            <p>A nice game. WIP. aksjdhkasdasdjhakh</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="glass">
+            <div id="form_container" class="glass">
+                <h2>CONTACT ME</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="glass">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="glass">
+                    <input type="submit" id="submit" value="Submit" class="glass">
+                </form>
+            </div>
+            
+        </section> 
+    </div>
+    
 </body>
 
 <script src="script.js"></script>

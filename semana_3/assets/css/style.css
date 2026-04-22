@@ -6,23 +6,39 @@
   --background-color4: #141414;
   --background-color5: rgb(0, 0, 0);
   --text-color: #ffffff8e;
+  --text-color2: #000000;
   --glass-background-color: rgba(255, 255, 255, 0.17);
+  --glass-background-color2: rgba(0, 0, 0, 0.17);
   --glass-border-values: 1px solid rgba(255, 255, 255, 0.3);
   --glass-shadow-values: 0 4px 30px rgba(0, 0, 0, 0.1);
-  --visited-link-color: #7978788e;
+  --visited-link-color: #9c9c9c;
   --font-space-grotesk: "Space Grotesk", sans-serif;
+}
+
+.glass {
+  background: var(--glass-background-color);
+  box-shadow: var(--glass-shadow-values);
+  border: var(--glass-border-values);
+  color: var(--text-color);
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
 }
 
 html {
   margin: 0px;
   background: linear-gradient(135deg, var(--background-color1), var(--background-color2), var(--background-color3), var(--background-color4), var(--background-color5));
-  background-size: 600% 150%;
+  background-size: 600% 350%;
   background-position: 0 0;
   font-family: var(--font-space-grotesk);
   animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-name: gradients;
+  box-sizing: border-box;
 }
+html ::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes grow {
   0% {
     transform: scale(1);
@@ -33,362 +49,459 @@ html {
 }
 @keyframes gradients {
   0% {
-    background-position: 0 0;
+    background-position: 0% 0%;
   }
   25% {
-    background-position: 50% 0;
+    background-position: 50% 0%;
   }
   50% {
-    background-position: 90% 0;
+    background-position: 90% 0%;
   }
   60% {
-    background-position: 60%;
+    background-position: 60% 0%;
   }
   75% {
-    background-position: 40%;
+    background-position: 40% 0%;
   }
   100% {
-    background-position: 0 0;
+    background-position: 0 0%;
   }
 }
-html body {
+body {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
   margin: 0%;
   font-size: 1vmax;
+  position: relative;
+  overflow-x: hidden;
 }
-html body header {
+body header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 20px;
   background-color: var(--background-color1);
 }
-html body header h1 {
+body header h1 {
   color: var(--text-color);
   padding: 20px;
   margin: 0;
 }
-html body header #menu_nav ul {
+body header #menu_nav ul {
+  display: flex;
+  justify-content: space-around;
   list-style-type: none;
   margin: 0;
-  padding: 8px;
+  padding: 9px;
   overflow: hidden;
 }
-html body header #menu_nav ul li {
-  float: left;
-}
-html body header #menu_nav ul li a:link {
-  display: block;
+body header #menu_nav ul li button, body header #menu_nav ul li a {
   color: var(--text-color);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  padding: 2vmax;
-  font-size: 1vmax;
+  padding: 20px;
+  font-size: 2.2vmin;
+  background-color: transparent;
+  border: none;
+  font-family: var(--font-space-grotesk);
 }
-html body header #menu_nav ul li a:hover {
+body header #menu_nav ul li button:hover {
   background-color: rgb(10, 10, 10);
 }
-html body #about_me {
-  width: 80%;
+body header #menu_nav ul li a:hover {
+  background-color: rgb(10, 10, 10);
+}
+body header #menu_nav ul li:hover {
+  animation: grow 0.3s ease forwards;
+}
+body #welcome {
+  width: 80vw;
   height: 80vh;
-  word-wrap: break-word;
-  position: relative;
-  padding-right: 20px;
-  padding-left: 20px;
-  color: var(--text-color);
-  margin: 20px;
+  position: absolute;
+  z-index: 5;
+  top: 10vh;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  transition: all 1s ease-in-out;
+  transform: translateX(100vw);
 }
-html body #about_me #more_info {
+body #welcome p {
+  box-sizing: border-box;
+  padding: 2rem;
+  width: 100%;
+}
+body #welcome img {
+  width: 62%;
+}
+body #welcome button {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 3%;
+  top: 3%;
+}
+body #welcome button img {
+  width: 3vh;
+}
+body #section_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body #section_container #about_me {
+  width: 80%;
+  height: 100%;
+  word-wrap: break-word;
   color: var(--text-color);
-  width: 7rem;
-  height: 2.5rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+body #section_container #about_me #about_me_p {
+  box-sizing: border-box;
+  padding: 40px;
+  margin: 10px;
+}
+body #section_container #about_me #about_me_p2 {
+  box-sizing: border-box;
+  padding: 20px 40px;
+  transform: translateX(-100vw);
+  transition: all 1s ease-in-out;
+  margin: 10px;
+}
+body #section_container #about_me #more_info {
+  color: var(--text-color);
+  width: 10vmax;
+  height: 4vh;
   border-radius: 20px;
   padding: 2px;
-  backdrop-filter: blur(5px);
-  background: var(--glass-background-color);
-  box-shadow: var(--glass-shadow-values);
-  border: var(--glass-border-values);
-  opacity: 0.5;
-  margin: 1rem;
+  margin: 1%;
+  transition: all 1s ease-in-out;
+  font-family: var(--font-space-grotesk);
 }
-html body #about_me #more_info:hover {
+body #section_container #about_me #more_info:hover {
   animation: grow 0.3s ease forwards;
 }
-html body #about_me .glass {
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  background: var(--glass-background-color);
-  box-shadow: var(--glass-shadow-values);
-  position: absolute;
-  backdrop-filter: blur(5px);
-  border: var(--glass-border-values);
-  border-radius: 50px;
-  opacity: 0.5;
-  z-index: -1;
-}
-html body #proyects {
-  position: relative;
-  margin: 1vmin;
-  padding: 1vmin;
+body #section_container #proyects {
+  color: var(--text-color);
+  width: 55%;
+  height: 100vh;
+  display: flex;
   font-size: 1vmax;
-  display: none;
-  flex-flow: column wrap;
+  flex-flow: column;
   align-items: center;
+  transition: all 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(150%);
+  z-index: 3;
 }
-html body #proyects #proyects_title {
+body #section_container #proyects a {
+  animation: none;
+}
+body #section_container #proyects #proyects_title {
   color: var(--text-color);
 }
-html body #proyects ul {
-  list-style: none;
-  padding: 0;
+body #section_container #proyects #proyects_cards {
+  width: 80%;
   display: grid;
-  justify-items: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-area: "pets snake atm" "4 5 6";
-  grid-gap: 2vmax;
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
 }
-html body #proyects ul li #mascotas {
-  grid-area: pets;
-}
-html body #proyects ul li #snake {
-  grid-area: snake;
-}
-html body #proyects ul li #atm {
-  grid-area: atm;
-}
-html body #proyects .glass {
+body #section_container #proyects .card {
   width: 100%;
   height: 100%;
-  top: 0px;
-  background: var(--glass-background-color);
-  box-shadow: var(--glass-shadow-values);
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
+}
+body #section_container #proyects .card:hover {
+  transform: translateY(-10%);
+}
+body #section_container #proyects .card:hover .description {
+  transform: translateY(60%);
+}
+body #section_container #proyects .card:hover .description span {
+  width: 50%;
+}
+body #section_container #proyects .card img {
+  width: 100%;
+  height: 100%;
+}
+body #section_container #proyects .card .description {
   position: absolute;
-  backdrop-filter: blur(5px);
-  border: var(--glass-border-values);
-  border-radius: 50px;
-  opacity: 0.5;
-  z-index: -1;
+  bottom: 0;
+  background-color: var(--background-color2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(80%);
+  transition: all 0.5s ease-in-out;
+  height: 80%;
 }
-html body #proyects a {
-  display: block;
+body #section_container #proyects .card .description h3 {
+  font-size: 1rem;
+  margin: 1em;
 }
-html body #contact {
-  display: none;
+body #section_container #proyects .card .description span {
+  background-color: rgb(0, 0, 0);
+  width: 25%;
+  height: 5px;
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+}
+body #section_container #proyects .card .description p {
+  box-sizing: border-box;
+  margin-bottom: 0;
+  padding: 0 1rem 1rem 1rem;
+  word-break: break-all;
+  font-size: 1rem;
+}
+body #section_container #contact {
+  display: flex;
   flex-flow: column wrap;
   align-items: center;
+  justify-content: center;
   color: var(--text-color);
+  transform: translateX(150%);
+  z-index: 3;
+  width: 30%;
+  position: absolute;
+  height: 100%;
+  right: 0;
+  transition: all 1s ease-in-out;
 }
-html body #contact form {
+body #section_container #contact #form_container {
+  box-sizing: border-box;
+  padding: 5%;
+  margin: 10%;
+  width: 80%;
+}
+body #section_container #contact form {
   display: grid;
   grid-template-columns: 5vmax 1fr;
   grid-gap: 3px;
   margin: 20px;
 }
-html body #contact form input {
+body #section_container #contact form input {
   height: 3vmin;
-  width: 33vmin;
 }
-html body #contact form #name {
-  backdrop-filter: blur(5px);
-  border: var(--glass-border-values);
-  border-radius: 50px;
+body #section_container #contact form #name, body #section_container #contact form #password, body #section_container #contact form #submit {
   opacity: 0.5;
-  background: var(--glass-background-color);
-  box-shadow: var(--glass-shadow-values);
 }
-html body #contact form #password {
-  backdrop-filter: blur(5px);
-  border: var(--glass-border-values);
-  border-radius: 50px;
-  opacity: 0.5;
-  background: var(--glass-background-color);
-  box-shadow: var(--glass-shadow-values);
-}
-html body #contact form #submit {
+body #section_container #contact form #submit {
   color: var(--text-color);
-  height: 3vmin;
-  width: 100%;
-  backdrop-filter: blur(5px);
-  border: var(--glass-border-values);
-  border-radius: 50px;
-  opacity: 0.5;
-  z-index: 1;
-  background: var(--glass-background-color);
-  box-shadow: var(--glass-shadow-values);
   font-size: 1.5vmin;
 }
-html body #contact form #submit:hover {
+body #section_container #contact form #submit:hover {
   animation: grow 0.3s ease forwards;
   color: white;
 }
-html body #gallery {
+body #gallery {
+  box-sizing: border-box;
   width: 60%;
+  height: 80vh;
   margin: 1%;
   display: grid;
   grid-gap: 1vh;
   grid-row-gap: 5vh;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: repeat(2, 1fr);
   color: var(--text-color);
-  align-content: space-around;
 }
-html body #gallery article {
+body #gallery article {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: fit-content;
+  width: 100%;
 }
-html body #gallery article .figure_imagenes {
+body #gallery article .figure_imagenes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: 2fr 1fr;
   grid-gap: 10px;
   margin: 0;
   height: 100%;
-}
-html body #gallery article .figure_imagenes img {
   width: 100%;
-  height: auto;
+}
+body #gallery article .figure_imagenes img {
+  width: 100%;
+  height: 100%;
   border-radius: 20%;
   border: var(--glass-border-values);
 }
-html body #gallery article p {
-  background: var(--glass-background-color);
-  padding: 5px;
+body #gallery article p {
   border-radius: 10px;
-  border: var(--glass-border-values);
+  padding: 5px;
   font-size: 1vmax;
   margin-top: 10%;
 }
-@media (max-width: 575.98px) {
-  html body h2 {
+@media only screen and (max-width: 575.98px) {
+  body h2 {
     font-size: 1.5rem;
   }
-  html body p {
-    font-size: 1.5rem;
+  body p {
+    font-size: 1.1rem;
   }
-  html body a:link {
-    font-size: 1rem;
+  body a:link {
+    font-size: 1.1rem;
   }
-  html body header {
+  body header {
     flex-direction: column;
   }
-  html body header h1 {
+  body header h1 {
     font-size: 3rem;
   }
-  html body header #menu_nav ul li {
-    float: none;
+  body header #menu_nav ul {
+    flex-direction: column;
+    text-align: center;
   }
-  html body header #menu_nav ul li a:link {
-    padding: 1vmax;
-    font-size: 3vmax;
+  body header #menu_nav ul li button, body header #menu_nav ul li a {
+    font-size: 2.2vmax;
   }
-  html body #proyects ul {
-    grid-template-columns: 1fr;
+  body header #menu_nav ul li a {
+    display: block;
   }
-  html body #proyects ul li {
-    padding: 15px;
-  }
-  html body #contact {
+  body #section_container #about_me #more_info {
+    width: 50%;
+    height: 5vh;
     font-size: 1.5rem;
   }
-  html body #contact form {
-    grid-template-columns: 7.1rem 1fr;
+  body #section_container #proyects {
+    height: fit-content;
+    width: 100%;
+  }
+  body #section_container #proyects #proyects_cards {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 30%);
+    width: 60%;
+  }
+  body #section_container #proyects .card:hover .description {
+    transform: translateY(60%);
+  }
+  body #section_container #proyects .card .description {
+    transform: translateY(81%);
+  }
+  body #section_container #proyects .card .description h3 {
+    font-size: 0.8rem;
+  }
+  body #section_container #proyects .card .description p {
+    padding: 0 0.5rem 0.5rem 0.5rem;
+  }
+  body #section_container #contact {
+    width: 100%;
+    font-size: 1.5rem;
+    justify-content: start;
+  }
+  body #section_container #contact form {
+    grid-template-columns: 35% 1fr;
     grid-gap: 10px;
     align-items: center;
   }
-  html body #contact form input {
-    width: 20rem;
-    height: 3rem;
+  body #section_container #contact form input {
+    height: 5vh;
   }
-  html body #contact form #submit {
+  body #section_container #contact form #submit {
     font-size: 1rem;
-    height: 1.5rem;
+    height: 100%;
     width: 100%;
   }
-  html body #gallery {
+  body #gallery {
     grid-template-columns: repeat(2, 1fr);
     align-content: center;
   }
-  html body #gallery article p {
+  body #gallery article p {
     font-size: 1.5rem;
   }
 }
-@media (min-width: 768px) and (max-width: 998.98px) {
-  html body h2 {
+@media only screen and (min-width: 768px) and (max-width: 998.98px) {
+  body h2 {
     font-size: 1.5rem;
   }
-  html body p {
+  body p {
     font-size: 1.5rem;
+    width: 100%;
+    height: auto;
   }
-  html body a:link {
+  body a:link {
     font-size: 1rem;
   }
-  html body header h1 {
+  body header h1 {
     font-size: 2rem;
     padding: 20px;
   }
-  html body header #menu_nav ul li a:link {
+  body header #menu_nav ul li a:link {
     padding: 1vmax;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
-  html body #proyects ul {
+  body #section_container #proyects #proyects_cards {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-template-rows: repeat(3, 30%);
+    height: 80%;
+    width: 95%;
   }
-  html body #proyects ul li {
-    padding: 10px;
+  body #section_container #proyects .card:hover .description {
+    transform: translateY(30%);
   }
-  html body #proyects ul li a {
-    font-size: 1.1rem;
+  body #section_container #proyects .card .description {
+    transform: translateY(60%);
   }
-  html body #contact {
+  body #section_container #contact {
     font-size: 1.5rem;
+    width: 70vw;
   }
-  html body #contact form {
-    grid-template-columns: 7.1rem 1fr;
-    grid-gap: 10px;
+  body #section_container #contact form {
+    grid-template-columns: 35% 1fr;
+    grid-gap: 1rem;
     align-items: center;
   }
-  html body #contact form input {
-    width: 20rem;
-    height: 3rem;
+  body #section_container #contact form input {
+    height: 5vh;
   }
-  html body #contact form #submit {
+  body #section_container #contact form #submit {
     font-size: 1rem;
-    height: 1.5rem;
+    height: 100%;
     width: 100%;
   }
-  html body #gallery {
+  body #gallery {
     grid-template-columns: repeat(3, 1fr);
-    align-content: center;
+    grid-gap: 3vw;
   }
-  html body #gallery article p {
-    font-size: 1.5rem;
+  body #gallery article p {
+    font-size: 1.2rem;
   }
 }
-html a:link {
+
+a:link {
   color: var(--text-color);
   text-decoration: none;
 }
-html a:visited {
+
+a:visited {
   color: var(--visited-link-color);
 }
-html a:hover {
+
+a:hover {
   color: white;
   animation: grow 0.3s ease forwards;
 }
-html a:active {
+
+button:hover {
+  animation: grow 0.3s ease forwards;
+}
+
+a:active {
   color: white;
 }
 

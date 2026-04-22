@@ -1,0 +1,8 @@
+.glass {
+    background: var(--glass-background-color);
+    box-shadow: var(--glass-shadow-values);
+    border: var(--glass-border-values);
+    color: var(--text-color);
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+}
