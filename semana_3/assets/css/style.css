@@ -1,11 +1,14 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300..700&display=swap");
 :root {
-  --background-color1: rgb(0, 0, 0);
-  --background-color2: #141414;
-  --background-color3: #363535;
-  --background-color4: #141414;
-  --background-color5: rgb(0, 0, 0);
-  --text-color: #ffffff8e;
+  --background-color1: #E02B6E;
+  --background-color2: #E0572B;
+  --background-color3: #E0362B;
+  --background-color4: #E02BDB;
+  --background-color5: #E0762B;
+  --background-color6: #E07D75;
+  --header-background-color: rgba(0, 0, 0, 0.78);
+  --text-color: #ffffff;
   --text-color2: #000000;
   --glass-background-color: rgba(255, 255, 255, 0.17);
   --glass-background-color2: rgba(0, 0, 0, 0.17);
@@ -26,7 +29,7 @@
 
 html {
   margin: 0px;
-  background: linear-gradient(135deg, var(--background-color1), var(--background-color2), var(--background-color3), var(--background-color4), var(--background-color5));
+  background: linear-gradient(135deg, var(--background-color1), var(--background-color2), var(--background-color3), var(--background-color4), var(--background-color5), var(--background-color6));
   background-size: 600% 350%;
   background-position: 0 0;
   font-family: var(--font-space-grotesk);
@@ -81,7 +84,7 @@ body header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: var(--background-color1);
+  background-color: var(--header-background-color);
 }
 body header h1 {
   color: var(--text-color);
@@ -131,7 +134,7 @@ body #welcome p {
   width: 100%;
 }
 body #welcome img {
-  width: 62%;
+  width: 60%;
 }
 body #welcome button {
   background-color: transparent;
@@ -228,7 +231,7 @@ body #section_container #proyects .card:hover {
   transform: translateY(-10%);
 }
 body #section_container #proyects .card:hover .description {
-  transform: translateY(60%);
+  transform: translateY(50%);
 }
 body #section_container #proyects .card:hover .description span {
   width: 50%;
@@ -240,12 +243,13 @@ body #section_container #proyects .card img {
 body #section_container #proyects .card .description {
   position: absolute;
   bottom: 0;
-  background-color: var(--background-color2);
+  color: var(--text-color);
+  background-color: var(--header-background-color);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateY(80%);
+  transform: translateY(75%);
   transition: all 0.5s ease-in-out;
   height: 80%;
 }
@@ -254,7 +258,7 @@ body #section_container #proyects .card .description h3 {
   margin: 1em;
 }
 body #section_container #proyects .card .description span {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--text-color);
   width: 25%;
   height: 5px;
   border-radius: 25px;
@@ -280,6 +284,7 @@ body #section_container #contact {
   height: 100%;
   right: 0;
   transition: all 1s ease-in-out;
+  text-shadow: 2px 1px 10px rgb(90, 90, 90);
 }
 body #section_container #contact #form_container {
   box-sizing: border-box;
@@ -296,7 +301,7 @@ body #section_container #contact form {
 body #section_container #contact form input {
   height: 3vmin;
 }
-body #section_container #contact form #name, body #section_container #contact form #password, body #section_container #contact form #submit {
+body #section_container #contact form #name, body #section_container #contact form #password {
   opacity: 0.5;
 }
 body #section_container #contact form #submit {
@@ -308,13 +313,13 @@ body #section_container #contact form #submit:hover {
   color: white;
 }
 body #gallery {
-  box-sizing: border-box;
   width: 60%;
-  height: 80vh;
   margin: 1%;
+  padding: 1%;
   display: grid;
-  grid-gap: 1vh;
+  grid-gap: 2vh;
   grid-row-gap: 5vh;
+  justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   color: var(--text-color);
@@ -322,30 +327,44 @@ body #gallery {
 body #gallery article {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+  height: 100%;
 }
 body #gallery article .figure_imagenes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 2fr 1fr;
-  grid-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
   margin: 0;
-  height: 100%;
+  height: 70%;
   width: 100%;
 }
 body #gallery article .figure_imagenes img {
-  width: 100%;
-  height: 100%;
-  border-radius: 20%;
+  max-width: 100%;
+  height: 60%;
+  border-radius: 50px;
   border: var(--glass-border-values);
 }
+body #gallery article .figure_imagenes div {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1%;
+  box-sizing: content-box;
+}
+body #gallery article .figure_imagenes div .img_pequeña {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+}
 body #gallery article p {
+  height: 30%;
+  width: 100%;
   border-radius: 10px;
   padding: 5px;
   font-size: 1vmax;
   margin-top: 10%;
+  box-sizing: border-box;
 }
 @media only screen and (max-width: 575.98px) {
   body h2 {
@@ -361,7 +380,7 @@ body #gallery article p {
     flex-direction: column;
   }
   body header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   body header #menu_nav ul {
     flex-direction: column;
@@ -391,7 +410,7 @@ body #gallery article p {
     transform: translateY(60%);
   }
   body #section_container #proyects .card .description {
-    transform: translateY(81%);
+    transform: translateY(85%);
   }
   body #section_container #proyects .card .description h3 {
     font-size: 0.8rem;
@@ -455,7 +474,7 @@ body #gallery article p {
     transform: translateY(30%);
   }
   body #section_container #proyects .card .description {
-    transform: translateY(60%);
+    transform: translateY(65%);
   }
   body #section_container #contact {
     font-size: 1.5rem;
