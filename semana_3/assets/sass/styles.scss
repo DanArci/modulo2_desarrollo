@@ -57,8 +57,7 @@ body {
     font-size: 1vmax;
     position: relative;
     overflow-x: hidden;
-
-
+    color: var(--text-color);
     header {
         display: flex;
         align-items: center;
@@ -307,6 +306,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     color: var(--text-color);
+
     article {
         display: flex;
         flex-direction: column;
@@ -350,6 +350,7 @@ body {
         }
     }
 }
+// responsive for mobile devices
     @media only screen and (max-width:575.98px) {
         h2 {
             font-size: 1.5rem;
@@ -443,6 +444,7 @@ body {
             }
         }
     }
+// responsive for tablets
     @media only screen and (min-width:768px) and (max-width: 998.98px) {
         h2 {
             font-size: 1.5rem;

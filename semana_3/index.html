@@ -17,7 +17,8 @@
 </head>
 
 <body onload="welcomeTransition()">
-    <header>
+<!-- This is the header of the page, it contains the name and the navigation menu. -->
+    <header> 
         <h1>DANIEL ARCINIEGAS</h1>
         <nav id="menu_nav">
             <ul>
@@ -27,17 +28,18 @@
             </ul>
         </nav>
     </header>
-    
-    <div id="welcome" class="glass">
+<!-- This is the welcome message that appears when the page is loaded, it will disappear after the user presses the close button. -->
+    <div id="welcome" class="glass"> 
         <h2>Welcome</h2>
         <p>Welcome to version 1.0 of my portfolio. This particular version was created using HTML, CSS, and JavaScript.
         It looks simple, I know! But it will improve day by day; this is just the first version.</p>
         <img src="assets/img/logos_todos.png" alt="?">
         <button id="close_welcome_button"><img src="assets/img/close_button.png" alt=""></button>
     </div>
-
-    <div id="section_container">
-        <section id="about_me">
+<!-- // This is the container for the sections of the page, it will contain the about me, proyects and contact sections. -->
+    <div id="section_container"> 
+    <!-- This is the about me section, it contains a brief description of who I am and what I do. -->
+        <section id="about_me"> 
             <h2>ABOUT ME</h2>
 
             <p id="about_me_p" class="glass">
@@ -49,8 +51,8 @@
 
             <button id="more_info" class="glass">Click for more info</button>
         </section>
-
-        <section id="proyects" class="glass">
+<!-- This is the proyects section, it contains a grid of cards with links to each project. -->
+        <section id="proyects" class="glass"> 
             <h2 id="proyects_title">PROYECTS</h2>
             <div id="proyects_cards" class="glass">
                 <a href="pets.html" id="pets_html">
@@ -115,8 +117,8 @@
                 </a>
             </div>
         </section>
-
-        <section id="contact" class="glass">
+<!-- This is the contact section, it contains an incomplete form that doesnt have a function yet. -->
+        <section id="contact" class="glass"> 
             <div id="form_container" class="glass">
                 <h2>CONTACT ME</h2>
                 <form>
@@ -132,7 +134,7 @@
     </div>
     
 </body>
-
-<script src="script.js"></script>
+<!-- This is the script that contains the functions for the page, such as the welcome transition and the section transitions. -->
+<script src="script.js"></script> 
 
 </html>

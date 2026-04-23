@@ -78,6 +78,7 @@ body {
   font-size: 1vmax;
   position: relative;
   overflow-x: hidden;
+  color: var(--text-color);
 }
 body header {
   display: flex;
