@@ -230,7 +230,7 @@ body {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    transform: translateY(75%);
+                    transform: translateY(79%);
                     transition: all 0.5s ease-in-out;
                     height: 80%;
                     h3 {
@@ -399,12 +399,12 @@ body {
                 .card {
                     &:hover {
                         .description {
-                            transform: translateY(60%);
+                            transform: translateY(55%);
                         } 
                     }
                     
                     .description {
-                        transform: translateY(85%);
+                        transform: translateY(80%);
                         h3 {
                             font-size: 0.8rem;
                         }

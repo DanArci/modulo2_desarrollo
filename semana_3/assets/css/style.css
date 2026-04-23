@@ -249,7 +249,7 @@ body #section_container #proyects .card .description {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateY(75%);
+  transform: translateY(79%);
   transition: all 0.5s ease-in-out;
   height: 80%;
 }
@@ -407,10 +407,10 @@ body #gallery article p {
     width: 60%;
   }
   body #section_container #proyects .card:hover .description {
-    transform: translateY(60%);
+    transform: translateY(55%);
   }
   body #section_container #proyects .card .description {
-    transform: translateY(85%);
+    transform: translateY(80%);
   }
   body #section_container #proyects .card .description h3 {
     font-size: 0.8rem;
